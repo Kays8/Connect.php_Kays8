@@ -8,24 +8,24 @@
 <body>
     
 <?php
-// ส่วนที่ highlight ขึ้นอยู่กับการตั้งค่าของ นศ
-$serverName = "localhost";
-$userName = "root";
-$userPassword = "12345678";
-$dbname = "business";
+$serverName = 'localhost';
+$userName = 'root';
+$userPassword = ''; //Lab room 408 or 409 - 12345678
+$dbname = 'bussiness';
 
-try
-{
-    $conn = new PDO("mysql:host=$serverName;dbname=$dbname;charset=UTF8",
+try {
+    $conn = new PDO(
+        "mysql:host=$serverName;dbname=$dbname;charset=UTF8",
         $userName, $userPassword);
 
-    if ($conn) {
-        echo "You are now connecting to database!!!";
-    }
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo 'You are now connecting to database!';
+
 } catch (PDOException $e) {
-    echo "Sorry! You cannot connect to database";
+    echo 'Sorry! You cannot connect to database: ' . $e->getMessage();
 }
 ?>
+
 
 </body>
 </html>
