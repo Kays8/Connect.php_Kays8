@@ -2,18 +2,16 @@
     try{
         require "connect.php";
         //โชว์ข้อมูล customer
-        $sql = "SELECT CustomerID,Birthdate,OutstandingDebt FROM customer" ;
+        $sql = "SELECT CountryCode, CountryName FROM country" ;
         $stmt = $conn->prepare($sql);
         $stmt->execute();
 
 while ($result = $stmt->fetch(PDO::FETCH_NUM)) {
     echo '<br>' .
-        'รหัสลูกค้าของฉันแบบที่ 1 : ' .
+        ' CountryCode : ' .
         $result[0] .
-        ' วันเกิด : ' .
-        $result[1] .
-        ' ยอดหนี้ : ' .
-        $result[2];
+        ' CountryName : ' .
+        $result[1] ;
 }
 
 } catch (PDOException $e) {
