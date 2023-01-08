@@ -7,11 +7,9 @@
         {
             $strCustomerID = $_GET["CustomerID"];
         }
-
         /*เอาไว้เช็คค่า 
         echo "show ... = ".$strCustomerID;
         */
-
         require "connect.php";
         $sql ="SELECT * FROM customer WHERE CustomerID = ?";
         $params = array($strCustomerID);

@@ -29,11 +29,9 @@ $stmt->execute();
 <?php
   }
 ?>
- 
 </table>
  
-<?php
-$conn = null;
-?>
+<?php $conn = null; ?>
+
 </body>  
 </html>
